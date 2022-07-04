@@ -40,3 +40,11 @@ Sponsors receive priority support via the sqlc Slack organization.
 
 sqlc was inspired by [PugSQL](https://pugsql.org/) and
 [HugSQL](https://www.hugsql.org/).
+
+--- 
+#  [박권수] feat. Custom(포인터 값으로 변경): 사용법
+--- 
+```
+make install
+$HOME/go/bin/sqlc generate -f [sqlc 정의 파일]
+```

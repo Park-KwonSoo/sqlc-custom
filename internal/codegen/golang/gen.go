@@ -54,6 +54,7 @@ func Generate(ctx context.Context, req *plugin.CodeGenRequest) (*plugin.CodeGenR
 }
 
 func generate(req *plugin.CodeGenRequest, enums []Enum, structs []Struct, queries []Query) (*plugin.CodeGenResponse, error) {
+
 	i := &importer{
 		Settings: req.Settings,
 		Queries:  queries,
@@ -179,7 +180,6 @@ func generate(req *plugin.CodeGenRequest, enums []Enum, structs []Struct, querie
 	for _, gq := range queries {
 		files[gq.SourceName] = struct{}{}
 	}
-
 	for source := range files {
 		if err := execute(source, "queryFile"); err != nil {
 			return nil, err

@@ -25,7 +25,7 @@ func init() {
 
 // Do runs the command logic.
 func Do(args []string, stdin io.Reader, stdout io.Writer, stderr io.Writer) int {
-	rootCmd := &cobra.Command{Use: "sqlc", SilenceUsage: true}
+	rootCmd := &cobra.Command{Use: "sqlc-custom", SilenceUsage: true}
 	rootCmd.PersistentFlags().StringP("file", "f", "", "specify an alternate config file (default: sqlc.yaml)")
 	rootCmd.PersistentFlags().BoolP("experimental", "x", false, "enable experimental features (default: false)")
 
