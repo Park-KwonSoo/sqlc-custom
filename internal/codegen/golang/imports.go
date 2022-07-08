@@ -165,9 +165,9 @@ func buildImports(settings *plugin.Settings, queries []Query, uses func(string) 
 	pkg := make(map[ImportSpec]struct{})
 	std := make(map[string]struct{})
 
-	if uses("sql.Null") {
-		std["database/sql"] = struct{}{}
-	}
+	// if uses("sql.Null") {
+	std["database/sql"] = struct{}{}
+	// }
 
 	sqlpkg := SQLPackageFromString(settings.Go.SqlPackage)
 	for _, q := range queries {

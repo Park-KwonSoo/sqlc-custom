@@ -35,6 +35,9 @@ func (q *Queries) {{.MethodName}}(ctx context.Context, {{.Arg.Pair}}) (*{{.Ret.D
 {{- end}}
 	var {{.Ret.Name}} {{.Ret.Type}}
 	err := row.Scan({{.Ret.Scan}})
+	if err == sql.ErrNoRows {
+		return nil, nil
+	}
 	return &{{.Ret.ReturnName}}, err
 }
 {{end}}
